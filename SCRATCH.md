@@ -26,16 +26,16 @@ First ensure the following are installed in the target system
     See all commands at [Gatsby](https://www.gatsbyjs.com/docs/reference/gatsby-cli/)
 
 2. Add Dependency on React Material UI (MUI)
-
-```shell
-pnpm add @mui/material @emotion/react @emotion/styled @fontsource/roboto @mui/icons-material
-```
-
-Then you can import it in your entry point like this:
-
-```javascript
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-```
+   
+   ```shell
+   pnpm add @mui/material @emotion/react @emotion/styled @fontsource/roboto @mui/icons-material @mui/system
+   ```
+   
+   Then you can import it in your entry point like this:
+   
+   ```javascript
+   import '@fontsource/roboto/300.css';
+   import '@fontsource/roboto/400.css';
+   import '@fontsource/roboto/500.css';
+   import '@fontsource/roboto/700.css';
+   ```
