@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import ProjectName from "../const/constants";
+import {ProjectName} from "../const/constants";
 
 
 export default function Hero() {
@@ -106,8 +106,8 @@ export default function Hero() {
             width: '100%',
             backgroundImage:
               theme.palette.mode === 'light'
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
+                ? 'url("https://i.ibb.co/nCrm3Gf/truck-with-white-trailer-that-says-scania-side.jpg")'
+                : 'url("https://i.ibb.co/nCrm3Gf/truck-with-white-trailer-that-says-scania-side.jpg")',
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',

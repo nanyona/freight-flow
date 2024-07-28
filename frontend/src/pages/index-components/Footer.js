@@ -11,21 +11,12 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
+import Copyright from "./Copyright";
 
 const logoStyle = {
   width: '140px',
   height: 'auto',
 };
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
-      {2024}
-    </Typography>
-  );
-}
 
 export default function Footer() {
   return (
@@ -38,6 +29,7 @@ export default function Footer() {
         py: { xs: 8, sm: 10 },
         textAlign: { sm: 'center', md: 'left' },
       }}
+      id={'footer'}
     >
       <Box
         sx={{

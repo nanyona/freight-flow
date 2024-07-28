@@ -39,3 +39,9 @@ First ensure the following are installed in the target system
    import '@fontsource/roboto/500.css';
    import '@fontsource/roboto/700.css';
    ```
+
+3. Add dependency on Supabase
+   
+   ```shell
+   pnpm add @supabase/supabase-js @supabase/auth-ui-react @supabase/auth-ui-shared
+   ```

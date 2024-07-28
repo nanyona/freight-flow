@@ -17,7 +17,7 @@ import {
     Handshake,
     Science
 } from '@mui/icons-material';
-import ProjectName from "../const/constants"
+import {ProjectName} from "../const/constants"
 
 const items = [
     {
@@ -26,8 +26,8 @@ const items = [
     description:
         'We offer comprehensive freight services, including road, rail, sea, and air transport. ' +
         'No matter the size or destination of your shipment, we have the solution.',
-    imageLight: 'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+    imageLight: 'url("https://i.ibb.co/nCrm3Gf/truck-with-white-trailer-that-says-scania-side1.jpg")',
+    imageDark: 'url("https://i.ibb.co/nCrm3Gf/truck-with-white-trailer-that-says-scania-side1.jpg")',
   },
 
     {

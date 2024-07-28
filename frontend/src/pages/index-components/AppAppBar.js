@@ -19,6 +19,21 @@ const logoStyle = {
     cursor: 'pointer',
 };
 
+const menuItems = [
+    {
+        section : 'features',
+        name: 'Services'
+    },
+    {
+        section : 'faq',
+        name: 'FAQ'
+    },
+    {
+        section : 'footer',
+        name: 'Contacts'
+    },
+];
+
 function AppAppBar({mode, toggleColorMode}) {
     const [open, setOpen] = React.useState(false);
 
@@ -91,49 +106,16 @@ function AppAppBar({mode, toggleColorMode}) {
                                 alt="logo of sitemark"
                             />
                             <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-                                <MenuItem
-                                    onClick={() => scrollToSection('features')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Features
-                                    </Typography>
-                                </MenuItem>
-
-                                <MenuItem
-                                    onClick={() => scrollToSection('highlights')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Highlights
-                                    </Typography>
-                                </MenuItem>
-
-                                <MenuItem
-                                    onClick={() => scrollToSection('testimonials')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Testimonials
-                                    </Typography>
-                                </MenuItem>
-
-                                <MenuItem
-                                    onClick={() => scrollToSection('pricing')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        Pricing
-                                    </Typography>
-                                </MenuItem>
-                                <MenuItem
-                                    onClick={() => scrollToSection('faq')}
-                                    sx={{py: '6px', px: '12px'}}
-                                >
-                                    <Typography variant="body2" color="text.primary">
-                                        FAQ
-                                    </Typography>
-                                </MenuItem>
+                                {menuItems.map((menuItem) => (
+                                    <MenuItem
+                                        onClick={() => scrollToSection(menuItem.section)}
+                                        sx={{py: '6px', px: '12px'}}
+                                    >
+                                        <Typography variant="body2" color="text.primary">
+                                            {menuItem.name}
+                                        </Typography>
+                                    </MenuItem>
+                                ))}
                             </Box>
                         </Box>
                         <Box
@@ -150,7 +132,6 @@ function AppAppBar({mode, toggleColorMode}) {
                                 size="small"
                                 component="a"
                                 href="sign-in/"
-                                target="_blank"
                             >
                                 Sign in
                             </Button>
@@ -160,7 +141,6 @@ function AppAppBar({mode, toggleColorMode}) {
                                 size="small"
                                 component="a"
                                 href="sign-up/"
-                                target="_blank"
                             >
                                 Sign up
                             </Button>
@@ -194,19 +174,16 @@ function AppAppBar({mode, toggleColorMode}) {
                                     >
                                         <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode}/>
                                     </Box>
-                                    <MenuItem onClick={() => scrollToSection('features')}>
-                                        Features
-                                    </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('highlights')}>
-                                        Highlights
-                                    </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('testimonials')}>
-                                        Testimonials
-                                    </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('pricing')}>
-                                        Pricing
-                                    </MenuItem>
-                                    <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
+                                    {menuItems.map((menuItem) => (
+                                        <MenuItem
+                                            onClick={() => scrollToSection(menuItem.section)}
+                                            sx={{py: '6px', px: '12px'}}
+                                        >
+                                            <Typography variant="body2" color="text.primary">
+                                                {menuItem.name}
+                                            </Typography>
+                                        </MenuItem>
+                                    ))}
                                     <Divider/>
                                     <MenuItem>
                                         <Button
@@ -214,7 +191,6 @@ function AppAppBar({mode, toggleColorMode}) {
                                             variant="contained"
                                             component="a"
                                             href="sign-up/"
-                                            target="_blank"
                                             sx={{width: '100%'}}
                                         >
                                             Sign up
@@ -226,7 +202,6 @@ function AppAppBar({mode, toggleColorMode}) {
                                             variant="outlined"
                                             component="a"
                                             href="sign-in/"
-                                            target="_blank"
                                             sx={{width: '100%'}}
                                         >
                                             Sign in

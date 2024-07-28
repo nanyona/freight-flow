@@ -10,7 +10,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import getLPTheme from './getLPTheme';
 import AppAppBar from "./index-components/AppAppBar";
-import ProjectName from './const/constants';
+import {ProjectName} from './const/constants';
 import Hero from "./index-components/Hero";
 import FAQ from "./index-components/FAQ";
 import Footer from "./index-components/Footer";
@@ -58,7 +58,7 @@ ToggleCustomTheme.propTypes = {
     toggleCustomTheme: PropTypes.func.isRequired,
 };
 
-export default function HomePage() {
+export default function HomePage(props) {
     const [mode, setMode] = React.useState('light');
     const [showCustomTheme, setShowCustomTheme] = React.useState(true);
     const LPtheme = createTheme(getLPTheme(mode));
@@ -80,13 +80,13 @@ export default function HomePage() {
             <Box sx={{ bgcolor: 'background.default' }}>
             {/*    <LogoCollection />*/}
                 <Features />
-                <Divider />
+            {/*    <Divider />*/}
             {/*    <Testimonials />*/}
             {/*    <Divider />*/}
             {/*    <Highlights />*/}
             {/*    <Divider />*/}
             {/*    <Pricing />*/}
-            {/*    <Divider />*/}
+                <Divider />
                 <FAQ />
                 <Divider />
                 <Footer />

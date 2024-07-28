@@ -8,6 +8,8 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {SupportEmail} from "../const/constants";
+
 
 export default function FAQ() {
   const [expanded, setExpanded] = React.useState(false);
@@ -61,7 +63,7 @@ export default function FAQ() {
               sx={{ maxWidth: { sm: '100%', md: '70%' } }}
             >
               You can reach our customer support team by emailing
-              <Link> support@email.com </Link>
+              <Link> {SupportEmail} </Link>
               or calling our toll-free number. We&apos;re here to assist you
               promptly.
             </Typography>
