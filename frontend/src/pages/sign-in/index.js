@@ -14,19 +14,27 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from "../index-components/Copyright";
 
+import { createClient } from '@supabase/supabase-js'
+import {anon_key, HomePage, supabase_url} from "../const/constants";
+import {useEffect, useState} from "react";
+const supabase = createClient(supabase_url, anon_key)
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
-export default function Index() {
-    const handleSubmit = (event) => {
+function Index() {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+        const formData = new FormData(event.currentTarget);
+        const {data, error} = await supabase.auth.signInWithPassword({
+            email: formData.get('email'),
+            password: formData.get('password'),
+        })
+        if (error) {
+            // error.
+            console.log(error)
+        }
     };
 
     return (
@@ -98,4 +106,30 @@ export default function Index() {
             </Container>
         </ThemeProvider>
     );
+}
+
+
+export default function App() {
+    const [session, setSession] = useState(null)
+
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            setSession(session)
+        })
+
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session)
+        })
+
+        return () => subscription.unsubscribe()
+    }, [])
+
+    if (!session) {
+        return (<Index/>)
+    } else {
+        window.location.href = '/dashboard'
+        // return (<div>Logged in!</div>)
+    }
 }
